@@ -25,6 +25,7 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -59,10 +60,12 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
+    @Transactional
     public Page<MobilePhone> getAllByShopId(String shopId, int page, int size, String sortBy) {
     	
     	Sort sort = Sort.by(sortBy).ascending();
     	Pageable pageable= PageRequest.of(page, size, sort);
+    	
         return inventoryRepo.findByShopId(shopId,pageable);
               
     }
