@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 COPY target/Mobistock-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the Spring Boot application port
-EXPOSE 8181
+EXPOSE 8080
 
 # Command to run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "app.jar"]
