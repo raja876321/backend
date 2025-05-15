@@ -35,7 +35,7 @@ public class SecurityConfig {
 	@Bean
 	SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
 
-		final String PUBLIC_URL[] = {"/users/loginUser/**", "/login/jwt/**",
+		final String PUBLIC_URL[] = {"/users/loginUser/**", "/login/jwt/**","/swagger-ui/index.html",
 				"/users/login/**", "/users/forgot/**", "/users/registration/**", "/users/verifyOtp/**",
 				"/users/updatePassword/**", "/users/createUser", "/users/forgotPage/**",
 				"/users/updatePasswordPage/**","/session-check/**","/users/reset-password/**", };
