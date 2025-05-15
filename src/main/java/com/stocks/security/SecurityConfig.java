@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,7 +35,7 @@ public class SecurityConfig {
 	@Bean
 	SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
 
-		final String PUBLIC_URL[] = {"/users/loginUser/**", "/login/jwt/**","/swagger-ui.html","/swagger-ui/index.html",
+		final String PUBLIC_URL[] = {"/users/loginUser/**", "/login/jwt/**",
 				"/users/login/**", "/users/forgot/**", "/users/registration/**", "/users/verifyOtp/**",
 				"/users/updatePassword/**", "/users/createUser", "/users/forgotPage/**",
 				"/users/updatePasswordPage/**","/session-check/**","/users/reset-password/**", };
